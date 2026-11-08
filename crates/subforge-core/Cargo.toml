@@ -1,0 +1,23 @@
+[package]
+name = "subforge-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+encoding_rs = "0.8"
+chardetng = "1"
+unicode-segmentation = "1"
+regex = "1"
+ttf-parser = "0.25"
+thiserror = "2"
+rustfft = "6"
+similar = "2"
+spellbook = "0.4"
+icu_segmenter = { version = "2", optional = true, default-features = false, features = ["compiled_data", "auto"] }
+
+[features]
+default = ["thai-segment"]
+# dictionary-based word breaking for Thai/Lao/Khmer/Burmese (no spaces between words)
+thai-segment = ["dep:icu_segmenter"]

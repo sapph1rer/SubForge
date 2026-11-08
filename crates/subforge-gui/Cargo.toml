@@ -1,0 +1,24 @@
+[package]
+name = "subforge-gui"
+version.workspace = true
+edition.workspace = true
+description = "SubForge — subtitle editor (egui)"
+
+[[bin]]
+name = "subforge"
+path = "src/main.rs"
+
+[dependencies]
+ureq = "3"
+subforge-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+eframe = { version = "0.37", default-features = false, features = ["glow", "persistence", "accesskit", "clipboard", "default_fonts", "links", "system_fonts", "wayland", "x11"] }
+egui_extras = "0.37"
+rfd = "0.17"
+cpal = "0.18"
+bytemuck = "1"
+egui = { version = "0.37", features = ["bytemuck"] }
+egui_tiles = { version = "0.18", features = ["serde"] }
+egui_material_icons = "0.9"

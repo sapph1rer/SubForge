@@ -1,0 +1,16 @@
+[package]
+name = "subforge-cli"
+version.workspace = true
+edition.workspace = true
+description = "SubForge command line: convert, batch, shift, sync, check and fix subtitles"
+
+[[bin]]
+name = "subforge-cli"
+path = "src/main.rs"
+
+[dependencies]
+subforge-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+clap = { version = "4", features = ["derive"] }
